@@ -49,12 +49,17 @@ def home():
 @app.route('/predict',methods=['POST'])
 def predict():
     query_asis = [str(x) for x in request.form.values()]
+#     query_list = []
+#     query_list.append(query_asis)
     
     # Preprocess review text with earlier defined preprocess_text function
-    query_processed = custom.preprocess_text(query_asis)
-    
+    query_processed_list = []
+    for query in query_asis:
+        query_processed = custom.preprocess_text(query)
+        query_processed_list.append(query_processed)
+        
     # Tokenising instance with earlier trained tokeniser
-    query_tokenized = loaded_tokenizer.texts_to_sequences(query_processed)
+    query_tokenized = loaded_tokenizer.texts_to_sequences(query_processed_list)
     
     # Pooling instance to have maxlength of 100 tokens
     query_padded = pad_sequences(query_tokenized, padding='post', maxlen=maxlen)
@@ -63,10 +68,10 @@ def predict():
     query_sentiments = pretrained_lstm_model.predict(query_padded)
     
 
-    if query_sentiments[0][0]>0:
-        return render_template('index.html', prediction_text=f"Positive Review with probable IMDb rating as: {np.round(unseen_sentiments[0][0]*10,1)}")
+    if query_sentiments[0][0]>0.5:
+        return render_template('index.html', prediction_text=f"Positive Review with probable IMDb rating as: {np.round(query_sentiments[0][0]*10,1)}")
     else:
-        return render_template('index.html', prediction_text=f"Negative Review with probable IMDb rating as: {np.round(unseen_sentiments[0][0]*10,1)}")
+        return render_template('index.html', prediction_text=f"Negative Review with probable IMDb rating as: {np.round(query_sentiments[0][0]*10,1)}")
 
 
 if __name__ == "__main__":

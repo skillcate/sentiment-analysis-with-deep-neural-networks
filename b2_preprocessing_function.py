@@ -20,7 +20,8 @@ class CustomPreprocess():
         pass
 
     def preprocess_text(self,sen):
-
+        sen = sen.lower()
+        
         # Remove html tags
         sentence = remove_tags(sen)
 
@@ -32,9 +33,6 @@ class CustomPreprocess():
 
         # Remove multiple spaces
         sentence = re.sub(r'\s+', ' ', sentence)  # Next, we remove all the single characters and replace it by a space which creates multiple spaces in our text. Finally, we remove the multiple spaces from our text as well.
-
-        # sentence = sen.lower()
-        sentence = [[word.lower() for word in line.split()] for line in sentence]
         
         # Remove Stopwords
         pattern = re.compile(r'\b(' + r'|'.join(stopwords_list) + r')\b\s*')
