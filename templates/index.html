@@ -11,14 +11,14 @@
   
 </head>
 
-<body style="background: #222;">
+<body style="background: #069;">
  <div class="login">
 	<h1>Sentiments Analysis</h1>
 
      <!-- Main Input For Receiving Query to our ML -->
 
     <form action="{{ url_for('predict')}}"method="post">
-        <input type="text" name="Enter the product review here" placeholder="Enter the product review here" required="required" />
+        <input type="text" name="Enter the product review here" placeholder="Enter the movie review here" required="required" />
         <button type="submit" class="btn btn-primary btn-block btn-large">Predict Sentiment</button>
     </form>
 
