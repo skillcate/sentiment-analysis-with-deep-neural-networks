@@ -1,74 +1,56 @@
 # Sentiment Classification - of IMDb User Reviews - using Deep Neural Networks
-An end-to-end toolkit on building a movie review sentiment classification LSTM model in Keras Deep Learning and the deploying model h5 file on local machine using Flask. Model is trained on IMDb Movie reviews [[https://www.kaggle.com/datasets/lakshmi25npathi/imdb-dataset-of-50k-movie-reviews]].
+An end-to-end toolkit on building a movie review sentiment classification LSTM model in Keras Deep Learning and the deploying model h5 file on local machine using Flask. Model is trained on IMDb Movie reviews [source](https://www.kaggle.com/datasets/lakshmi25npathi/imdb-dataset-of-50k-movie-reviews).
 
 As part of model training, we have trained three separate nodels, namely: Simple Neural Net, CNN and LSTM; and concluded with reasoning as to why LSTMs are well suited to handle (sequential) text data.
 
 
 ## How the model works!
-![](https://github.com/skillcate/sentiment_analysis_with_sklearn_pipeline/blob/main/readme/model-functionality.gif)
+![](https://github.com/skillcate/movie-sentiment-analysis-with-deep-neural-networks/blob/a31f642c1753dbf1b7220a37d4b09602e6248a7c/readme/movie-sentiment-functionality.gif)
 
 ## Steps to run on Windows
 
-* Prerequisites: [Python 3.9](https://www.python.org/downloads/) (ensure Python is added to [PATH](https://medium.com/co-learning-lounge/how-to-download-install-python-on-windows-2021-44a707994013)) + [Git](https://www.markdownguide.org/basic-syntax/) Client
-* Open GIT CMD >> navigate to working directory >> Clone this Github Repo
+* Prerequisites: [Python 3.9](https://www.python.org/downloads/) (ensure Python is added to [PATH](https://medium.com/co-learning-lounge/how-to-download-install-python-on-windows-2021-44a707994013)) + [Git](https://www.markdownguide.org/basic-syntax/) Client 
+* Open GIT CMD >> navigate to working directory >> Clone this Github Repo (or download project files from GitHub directly)
 
       git clone https://github.com/skillcate/sentiment_analysis_with_sklearn_pipeline.git  
 * Open Windows Powershell >> navigate to new working directory (cloned repo folder)
-* Create a virtual environment
-  * install virtual environment
+* Run Project in Flask
+  * Using PIP + Virtualenv:
  
-        pip install virtualenv
-        
-  * create virtual environment by the name ENV
-        
-        virtualenv ENV
-        
-  * activate ENV
+        pip install virtualenv                  # install virtual environment        
+        virtualenv ENV                          # create virtual environment by the name ENV
+        .\ENV\Scripts\activate                  # activate ENV
+        pip install -r .\requirements.txt       # install project dependencies
+        python app.py                           # run the project
 
-        .\ENV\Scripts\activate
-        
-* Install project dependencies
+  * Using Conda Environment:
 
-      pip install -r .\requirements.txt
-      
-* Run the project
-
-      python app.py
-      
-* Look for the local host address on Powershell screen, something like: 127.0.0.1:5000 >> Type it on your Web Browser >> Project shall load
-* Try out your Amazon Alexa test reviews and look for results
-* To close >> Go back to Powershell & type `ctrl+c` >> Deactivate Virtual Environment ENV
-
-      deactivate
-
+        pip install virtualenv                  # install virtual environment
+        virtualenv ENV                          # create virtual environment by the name ENV
+        source ENV/bin/activate                 # activate ENV
+        pip install -r requirements.txt         # install project dependencies
+        python app.py                           # run the project
 
 ### Steps to run on Mac
 
 * Prerequisites: [Python 3.9](https://www.python.org/downloads/)
-* Open Terminal >> navigate to working directory >> Clone this Github Repo
+* Open Terminal >> navigate to working directory >> Clone this Github Repo (or download project files from GitHub directly)
 
-      git clone https://github.com/skillcate/sentiment_analysis_with_sklearn_pipeline.git  
-* Navigate to new working directory (cloned repo folder)
-* Create a virtual environment
-  * install virtual environment
+        git clone https://github.com/skillcate/sentiment_analysis_with_sklearn_pipeline.git  
+* Navigate to project working directory (cloned repo folder)
+* Run Project in Flask
+  * Using PIP + Virtualenv:
 
-        pip install virtualenv
-        
-  * create virtual environment by the name ENV
-  
-        virtualenv ENV  
-  * activate ENV
-        
-        source ENV/bin/activate
-* Install project dependencies
-
-      pip install -r requirements.txt  
-* Run the project
-
-      python app.py
+        pip install virtualenv                  # install virtual environment
+        virtualenv ENV                          # create virtual environment by the name ENV
+        source ENV/bin/activate                 # activate ENV
+        pip install -r requirements.txt         # install project dependencies
+        python app.py                           # run the project
       
-* Look for the local host address on Terminal screen, something like: 127.0.0.1:5000 >> Type it on your Web Browser >> Project shall load
-* Try out your Amazon Alexa test reviews and look for results
-* To close >> Go back to Terminal & type `ctrl+c` >> Deactivate Virtual Environment ENV
+  * Using Conda Environment:
 
-      deactivate
+        pip install virtualenv                  # install virtual environment
+        virtualenv ENV                          # create virtual environment by the name ENV
+        source ENV/bin/activate                 # activate ENV
+        pip install -r requirements.txt         # install project dependencies
+        python app.py                           # run the project
