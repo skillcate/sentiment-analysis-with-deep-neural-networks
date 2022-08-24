@@ -62,3 +62,7 @@ As part of model training, we have trained three separate nodels, namely: Simple
         pip install -r pip_requirements.txt         # install project dependencies
         python app.py                           # run the project
         deactivate                              # close virtual environment once done
+        
+### Bug / Feature Request
+If you find a bug (the website couldn't handle the query and / or gave undesired results), kindly open an issue [here](https://github.com/skillcate/sentiment-analysis-with-deep-neural-networks/issues) by including your search query and the expected result.
+
