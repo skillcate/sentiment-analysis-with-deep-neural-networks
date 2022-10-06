@@ -14,7 +14,7 @@ As part of model training, we have trained three separate nodels, namely: Simple
 * Prerequisites: [Python 3.9](https://www.python.org/downloads/) (ensure Python is added to [PATH](https://medium.com/co-learning-lounge/how-to-download-install-python-on-windows-2021-44a707994013)) + [Git](https://www.markdownguide.org/basic-syntax/) Client 
 * Open GIT CMD >> navigate to working directory >> Clone this Github Repo (or download project files from GitHub directly)
 
-      git clone https://github.com/skillcate/sentiment_analysis_with_sklearn_pipeline.git  
+      git clone https://github.com/skillcate/sentiment-analysis-with-deep-neural-networks.git  
 * Open Windows Powershell >> navigate to new working directory (cloned repo folder)
 * Run Project in Flask
 
@@ -43,7 +43,7 @@ As part of model training, we have trained three separate nodels, namely: Simple
 * Prerequisites: [Python 3.9](https://www.python.org/downloads/)
 * Open Terminal >> navigate to working directory >> Clone this Github Repo (or download project files from GitHub directly)
 
-        git clone https://github.com/skillcate/sentiment_analysis_with_sklearn_pipeline.git  
+        git clone https://github.com/skillcate/sentiment-analysis-with-deep-neural-networks.git  
 * Navigate to project working directory (cloned repo folder)
 * Run Project in Flask
   * Using Conda Environment:
